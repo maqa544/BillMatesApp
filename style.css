@@ -67,15 +67,16 @@ body {
 
 .container {
   display: flex;
-  max-width: 1200px;
+  max-width: 78rem;
   margin-top: 60px;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 20px;
   flex-wrap: wrap;
 }
 
 .left {
+  margin-top: 20px;
+  margin-left: 20px;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -87,12 +88,12 @@ body {
 
 .right {
   flex: 2;
-  display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   margin-bottom: 20px;
 }
+
 
 .right .screenshots {
   display: flex;
@@ -102,6 +103,13 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
+  gap: 16px;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.right .slider-wrapper {
+  display: none;
 }
 
 .screenshot1 {
@@ -167,7 +175,45 @@ footer {
   font-weight: 700;
 }
 
+@media (max-width: 1080px) and (min-width: 769px) {
+  .container {
+    flex-direction: column-reverse;
+    /* Similar to the media query but triggered earlier */
+  }
+}
+
 @media (max-width: 768px) {
+  .right .screenshots {
+    display: none;
+    /* Hide the original screenshots layout */
+  }
+  
+  .right .slider-wrapper{
+    display: flex;
+    max-width: 52rem;
+    margin: 0 auto;
+  }
+
+  .right .slider {
+    display: flex;
+    aspect-ratio: 9 / 16;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 16px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow:  0, 1.5rem 3rem -0.75rem hsla(0%,0%,0%,0.25%);
+  }
+
+  .right .slider img{
+    height: 40rem;
+    max-height: 40rem;
+    flex: 1 0 40%;
+    scroll-snap-align: center;
+    object-fit: scale-down;
+  }
+
   .toolbar {
     flex-direction: column;
     align-items: center;
@@ -175,11 +221,13 @@ footer {
     /* Ensure toolbar width adjusts */
     margin: 0 20px;
     /* Maintain margin for visibility */
+    box-shadow: none;
+    position: fixed;
   }
 
   .container {
-    flex-direction: column-reverse;
     margin-top: 40px;
+    width: 100%;
     /* Adjust margin for smaller screens */
   }
 
@@ -200,5 +248,21 @@ footer {
 
   .gp-button {
     max-width: 260px;
+  }
+
+  @media (max-width: 580px) {
+
+    .toolbar a {
+      text-indent: -9999px;
+    }
+
+    .icon-img {
+      margin-right: 0;
+    }
+
+    .toolbar-buttons {
+      justify-content: flex-start;
+      width: 100%;
+    }
   }
 }
