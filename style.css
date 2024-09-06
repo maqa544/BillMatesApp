@@ -39,13 +39,11 @@ body {
   height: 28px;
   line-height: 28px;
   color: #333;
-  font-size: 1.2em;
+  font-size: 1.5em;
   text-decoration: none;
   padding: 10px 20px;
   border-radius: 25px;
   transition: background-color 0.3s ease;
-  background-color: #E0E0E0;
-  box-shadow: 4px 4px 8px #bebebe, -4px -4px 8px #ffffff;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -62,7 +60,7 @@ body {
   object-fit: cover;
   display: flex;
   margin-right: 16px;
-  box-shadow: 4px 4px 8px #818181, -4px -4px 8px #757575;
+  box-shadow: 2px 2px 4px #a09e9e, -2px -2px 4px #ffffff;
 }
 
 .container {
@@ -136,9 +134,8 @@ body {
 .gp-button {
   max-width: 200px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  border-radius: 7px;
+  border-radius: 8px;
   margin-top: 20px;
-  visibility: hidden;
 }
 
 .desrb {
@@ -158,7 +155,6 @@ footer {
 }
 
 .icon-img {
-  width: 24px;
   height: 100%;
   margin-right: 8px;
   display: block;
@@ -190,7 +186,6 @@ footer {
   
   .right .slider-wrapper{
     display: flex;
-    max-width: 52rem;
     margin: 0 auto;
   }
 
@@ -207,9 +202,8 @@ footer {
   }
 
   .right .slider img{
-    height: 40rem;
-    max-height: 40rem;
     flex: 1 0 40%;
+    max-height: 46rem;
     scroll-snap-align: center;
     object-fit: scale-down;
   }
@@ -254,15 +248,20 @@ footer {
 
     .toolbar a {
       text-indent: -9999px;
+      overflow: visible;
     }
 
     .icon-img {
       margin-right: 0;
+      font-size: 1.5em;
     }
 
     .toolbar-buttons {
       justify-content: flex-start;
       width: 100%;
+      padding-left: 20px;
+      padding-right: 20px;
+      gap: 32px;
     }
   }
 }
