@@ -1,4 +1,4 @@
-# BillMates
+# BillMates [Website](https://maqa544.github.io/BillMatesApp/)
 
 ### Split bills with ease
 
